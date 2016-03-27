@@ -46,8 +46,8 @@
     "typescript": "^1.7.5"
   },
   "bugs": {
-    "url": "https://github.com/GeorgianCollege/COMP2068-MongoDemo/issues"
+    "url": "https://github.com/mansipatel108/survey/issues"
   },
-  "homepage": "https://github.com/GeorgianCollege/COMP2068-MongoDemo#readme",
+  "homepage": "https://github.com/mansipatel108/survey#readme",
   "main": "gulpfile.js"
 }
