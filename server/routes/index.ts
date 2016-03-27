@@ -14,23 +14,16 @@ router.get('/', (req: express.Request, res: express.Response, next: any) => {
         displayName: req.user ? req.user.displayName : '' });
 });
 
-/* GET product page. */
-router.get('/products', (req: express.Request, res: express.Response, next: any) => {
-    res.render('index', { 
-        title: 'Products',
-        displayName: req.user ? req.user.displayName : ''});
-});
-
-/* GET services page. */
-router.get('/services', (req: express.Request, res: express.Response, next: any) => {
-    res.render('index', { 
-        title: 'Services',
+/* GET survey page. */
+router.get('/survey', (req: express.Request, res: express.Response, next: any) => {
+    res.render('survey', { 
+        title: 'Survey',
         displayName: req.user ? req.user.displayName : '' });
 });
 
 /* GET about page. */
 router.get('/about', (req: express.Request, res: express.Response, next: any) => {
-    res.render('index', { 
+    res.render('about', { 
         title: 'About',
         displayName: req.user ? req.user.displayName : '' });
 });

@@ -12,21 +12,15 @@ router.get('/', function (req, res, next) {
         title: 'Home',
         displayName: req.user ? req.user.displayName : '' });
 });
-/* GET product page. */
-router.get('/products', function (req, res, next) {
-    res.render('index', {
-        title: 'Products',
-        displayName: req.user ? req.user.displayName : '' });
-});
-/* GET services page. */
-router.get('/services', function (req, res, next) {
-    res.render('index', {
-        title: 'Services',
+/* GET survey page. */
+router.get('/survey', function (req, res, next) {
+    res.render('survey', {
+        title: 'Survey',
         displayName: req.user ? req.user.displayName : '' });
 });
 /* GET about page. */
 router.get('/about', function (req, res, next) {
-    res.render('index', {
+    res.render('about', {
         title: 'About',
         displayName: req.user ? req.user.displayName : '' });
 });
