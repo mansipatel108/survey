@@ -28,7 +28,7 @@ var myerror = new CustomError();
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var articles = require('./routes/articles');
+//var articles = require('./routes/articles');
 
 var app = express();
 
@@ -66,7 +66,7 @@ passport.deserializeUser(User.deserializeUser());
 // Route Definitions
 app.use('/', routes);
 app.use('/users', users);
-app.use('/articles', articles);
+//app.use('/articles', articles);
 
 // connect to mongodb with mongoose
 var DB = require('./config/db');
