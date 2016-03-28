@@ -1,6 +1,6 @@
 "use strict";
 var express = require('express');
-var sendgrid = require('sendgrid')('ACCOUNT_NAME', 'PASSWORD');
+var sendgrid = require('sendgrid')('mansipatel108', 'mansipatel1996');
 var passport = require('passport');
 var router = express.Router();
 // db references
@@ -36,7 +36,7 @@ router.get('/contact', function (req, res, next) {
 /* Email processing */
 router.post('/contact', function (req, res, next) {
     sendgrid.send({
-        to: 'tsiliopoulos@hotmail.com',
+        to: 'mpatel.y@gmail.com',
         from: req.body.email,
         subject: 'Contact Form Submission',
         text: "This message has been sent from the contact form at [MongoDB Demo]\r\n\r\n" +
