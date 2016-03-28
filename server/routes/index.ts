@@ -38,10 +38,11 @@ router.get('/contact', (req: express.Request, res: express.Response, next: any) 
         displayName: req.user ? req.user.displayName : '' });
 });
 
-/* Email processing */
+/* Email processing 
 router.post('/contact', (req: express.Request, res: express.Response, next: any) => {
+    
     sendgrid.send({
-        to: 'tsiliopoulos@hotmail.com',
+        to: 'mpatel.y@gmail.com',
         from: req.body.email,
         subject: 'Contact Form Submission',
         text: "This message has been sent from the contact form at [MongoDB Demo]\r\n\r\n" +
@@ -53,6 +54,7 @@ router.post('/contact', (req: express.Request, res: express.Response, next: any)
         "<strong>Phone:</strong> " + req.body.phone + "<br><br>" +
         req.body.message
     },
+    
         (err, json) => {
             if (err) { res.status(500).json('error'); 
             }
@@ -63,7 +65,7 @@ router.post('/contact', (req: express.Request, res: express.Response, next: any)
 
         });
 });
-
+*/
 /* Render Login Page */
 router.get('/login', (req:express.Request, res: express.Response, next:any) => {
     if(!req.user) {

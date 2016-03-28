@@ -1,6 +1,6 @@
 "use strict";
 var express = require('express');
-var sendgrid = require('sendgrid')('mansipatel108', 'mansipatel1996');
+var sendgrid = require('sendgrid')('ACCOUNT_NAME', 'PASSWORD');
 var passport = require('passport');
 var router = express.Router();
 // db references
@@ -33,30 +33,34 @@ router.get('/contact', function (req, res, next) {
         messages: null,
         displayName: req.user ? req.user.displayName : '' });
 });
-/* Email processing */
-router.post('/contact', function (req, res, next) {
+/* Email processing
+router.post('/contact', (req: express.Request, res: express.Response, next: any) => {
+    
     sendgrid.send({
         to: 'mpatel.y@gmail.com',
         from: req.body.email,
         subject: 'Contact Form Submission',
         text: "This message has been sent from the contact form at [MongoDB Demo]\r\n\r\n" +
-            "Name: " + req.body.name + "\r\n\r\n" +
-            "Phone: " + req.body.phone + "\r\n\r\n" +
-            req.body.message,
+        "Name: " + req.body.name + "\r\n\r\n" +
+        "Phone: " + req.body.phone + "\r\n\r\n" +
+        req.body.message,
         html: "This message has been sent from the contact form at [MongoDB Demo]<br><br>" +
-            "<strong>Name:</strong> " + req.body.name + "<br><br>" +
-            "<strong>Phone:</strong> " + req.body.phone + "<br><br>" +
-            req.body.message
-    }, function (err, json) {
-        if (err) {
-            res.status(500).json('error');
-        }
-        res.render('contact', {
-            title: 'Contact',
-            messages: req.flash('successmessage')
+        "<strong>Name:</strong> " + req.body.name + "<br><br>" +
+        "<strong>Phone:</strong> " + req.body.phone + "<br><br>" +
+        req.body.message
+    },
+    
+        (err, json) => {
+            if (err) { res.status(500).json('error');
+            }
+            res.render('contact', {
+                title: 'Contact',
+                messages: req.flash('successmessage')
+         });
+
         });
-    });
 });
+*/
 /* Render Login Page */
 router.get('/login', function (req, res, next) {
     if (!req.user) {

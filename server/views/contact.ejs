@@ -1,12 +1,19 @@
 <% include partials/header.ejs %>
     <% include partials/navbar.ejs %>
-        <main class="container">
-            <% if (messages) { %>
+       <main class="container">
+    <div class="row">
+     <div class="col-md-6 col-md-offset-3">
+
+            <% if (messages ) { %>
                 <div class="alert alert-success alert-dismissable" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <%= messages %></div>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                <%= messages %>
+                
+                </div>
             <% } %>
-            <h1><%= title %> Page</h1>
+           
             <form method="post">
                 <div class="form-group">
                     <label for="name">Name:</label>
@@ -26,5 +33,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary btn-lg">Send</button>
             </form>
+            </div>
+            </div>
         </main>
         <% include partials/footer.ejs %>
